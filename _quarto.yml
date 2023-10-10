@@ -1,0 +1,52 @@
+project:
+  type: book
+  output-dir: docs
+  
+book: 
+  title: "Übung zur Vorlesung Weiterführende Methoden der empirischen Forschung"
+  author: "Christina Bogner"
+  date-format: "DD.MM.YYYY"
+  date: now
+  language: "de"
+  chapters: 
+    - index.qmd
+    - part: "EINFÜHRUNG IN R"
+      chapters: 
+        - 01-erste-schritte.qmd
+        - 03-ggplot.qmd
+        - 04-einlesen.qmd
+    - part: "EXPLORATIVE DATENANALYSE"
+    - part: "REGRESSIONSANALYSE"
+    - part: "MASCHINELLES LERNEN"
+    - part: "LABS: EIGENSTÄNDIGE ÜBUNGEN"
+      chapters: 
+        - 25-lab-01-intro-to-r.qmd
+        - 30-lab-02-intro-to-data.qmd
+    - references.qmd
+  appendices:
+    - 100-aufgabensammlung.qmd
+  page-navigation: true
+  downloads: [pdf, epub]
+  sidebar:
+    style: docked
+    background: light
+    
+bibliography: '../statistik_und_datenanalyse/statistik_und_datenanalyse.bib'
+
+
+language: _language-de.yml
+
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+    css: stat_style.css
+    df-print: paged
+  pdf:
+    documentclass: scrreport
+    title: "Übung zur Vorlesung Weiterführende Methoden der empirischen Forschung"
+  epub:
+    title: "Übung zur Vorlesung Weiterführende Methoden der empirischen Forschung"
+
+
