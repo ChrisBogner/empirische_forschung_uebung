@@ -30,7 +30,7 @@ Wir müssen R also für die Darstellung von Daten Folgendes mitteilen:
 Wir spielen das am Beispiel des Datensatzes `gapminder` durch, den Sie im Paket `gapminder` finden. Wir laden zunächst die nötigen Pakete.
 ```{r}
 #| message: false
-library(ggplot2)
+library(tidyverse)
 library(gapminder)
 ```
 
