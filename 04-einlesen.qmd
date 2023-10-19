@@ -89,36 +89,9 @@ Kapitel 4.1 in @ModernDive
 
 ## Aufgaben
 
-## Die Umfrage aus der ersten Sitzung
-Lesen Sie die Datei 'Umfrage_2022_kurz.csv' ein. Sie enthält die Umfrageergebnisse aus der ersten Session der Vorlesung zur Frage 'Haben Sie schon mal einen Statistikkurs besucht?'
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-umfrage <- read_delim(file = 'Daten/Umfrage_2022_kurz.csv', delim = ';')
+Bearbeiten Sie die eigenständigen Übungen Lab01 und Lab02.
 
-```
-
-1. Wie viele Einträge enthält der Datensatz?
-2. Wie viele Variablen enthält der Datensatz?
-3. Sind die Variablen numerisch oder kategorial?
-4. Erklären Sie jede Variable. Welche Information enthält sie?
-5. Stellen Sie die Antworten auf die Frage als Balkendiagramm dar. Es soll wie folgt aussehen:
-
-```{r}
-#| echo: false
-ggplot(umfrage, mapping = aes(x = Poll_Option)) +
-  geom_bar() +
-  labs(x = 'Antworten',
-       y = 'Anzahl',
-       title = 'Haben Sie schon mal einen Statistikkurs besucht?',
-       caption = 'Quelle: Umfrageergebnisse Teilnehmende Vorlesung Statistik WS 2022-2023')
-```
-
-
-6. Wie viele Teilnehmende haben bereits einen Statistikkurs besucht (ungefähr)?
-
-## Ihre Arbeit einreichen
-- Speichern Sie Ihr Notebook ab.
-- Laden Sie Ihre .Rmd Datei in ILIAS hoch. **Beachten Sie die Frist!**
-- Sie erhalten die Musterlösung nach dem Hochladen.
+<!-- ## Ihre Arbeit einreichen -->
+<!-- - Speichern Sie Ihr Notebook ab. -->
+<!-- - Laden Sie Ihre .Rmd Datei in ILIAS hoch. **Beachten Sie die Frist!** -->
+<!-- - Sie erhalten die Musterlösung nach dem Hochladen. -->
