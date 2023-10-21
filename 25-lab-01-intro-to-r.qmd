@@ -8,7 +8,7 @@ Das ist die deutsche Übersetzung des "OpenIntro Labs for R and tidyverse" [1. I
 
 Ziel dieser Übung ist es, Sie mit R und RStudio vertraut zu machen, die Sie im Laufe des Kurses sowohl zum Erlernen der im Kurs besprochenen statistischen Konzepte als auch zur Analyse realer Daten und zum Ziehen fundierter Schlussfolgerungen verwenden werden. Der Unterschied zwischen R und RStudio ist folgender: R ist der Name der Programmiersprache selbst und RStudio ist eine praktische Schnittstelle für die Arbeit mit R. Genauer nennt man die Software RStudio eine integrierte Entwicklungsumgebung (IDE, von englisch *integrated development environment*).
 
-Im Laufe der Übungen werden Sie ermutigt, über das hinauszugehen, was die Übungen vorgeben; die Bereitschaft zum Experimentieren wird Sie zu einem/einer viel besseren Programmierer*in machen! Bevor wir jedoch so weit sind, müssen Sie einige Grundkenntnisse in R erwerben. Zuerst werden wir die grundlegenden Bausteine von R und RStudio erkunden: die Entwicklungsumgebung RStudio, das Laden von Daten und grundlegende Befehle für die Arbeit mit Daten in R.
+Im Laufe der Übungen werden Sie ermutigt, über das hinauszugehen, was die Übungen vorgeben; die Bereitschaft zum Experimentieren wird Sie zu einem/einer viel besseren Programmierer*in machen! Bevor wir jedoch so weit sind, müssen Sie einige Grundkenntnisse in der Sprache R erwerben. Zuerst werden wir die grundlegenden Bausteine von R und RStudio erkunden: die Entwicklungsumgebung RStudio, das Laden von Daten und grundlegende Befehle für die Arbeit mit Daten in R.
 
 Fahren Sie fort und starten Sie RStudio. Sie sollten ein Fenster sehen, das wie in @fig-r-interface-2023 aussieht.
 
@@ -36,7 +36,7 @@ install.packages("tidyverse")
 install.packages("openintro")
 ```
 
-Nachdem Sie Enter/Return gedrückt haben, beginnt ein Textstrom, der den Prozess beschreibt, den R durchläuft, um das Paket von dem Ort zu installieren, den Sie bei der Installation von R ausgewählt haben. Wenn Sie bei der Installation von R nicht aufgefordert wurden, einen Server für das Herunterladen von Paketen auszuwählen, kann RStudio Sie auffordern, einen Server auszuwählen, von dem das Paket heruntergeladen werden soll; jeder von ihnen wird funktionieren.
+Nachdem Sie Enter/Return gedrückt haben, beginnt ein Textstrom, der den Prozess beschreibt, den R durchläuft, um das Paket von der Quelle zu installieren, die Sie bei der Installation von R ausgewählt haben. Wenn Sie bei der Installation von R nicht aufgefordert wurden, einen Server für das Herunterladen von Paketen auszuwählen, kann RStudio Sie auffordern, einen Server auszuwählen, von dem das Paket heruntergeladen werden soll; jeder von ihnen wird funktionieren.
 
 Sie müssen Pakete nur einmal *installieren*, aber Sie müssen sie jedes Mal *laden*, wenn Sie RStudio neu starten. Wir laden die Pakete mit der Funktion `library`. Kopieren Sie die folgenden zwei Zeilen und fügen Sie sie in einen neuen Chunk ein. Um die Pakete tidyverse und openintro in Ihre Arbeitsumgebung zu laden, führen Sie den Code aus.
 
@@ -49,7 +49,7 @@ Sie können den obigen Code ausführen, indem Sie:
 
 - den Cursor auf die Zeile setzen und `Strg-Enter` oder `Cmd-Enter` drücken
 - den Cursor auf die Zeile setzen und die Schaltfläche "Run" in der oberen rechten Ecke der R Markdown-Datei drücken, oder
-- durch Klicken auf den grünen Pfeil in der oberen rechten Ecke des Codeabschnitts.
+- auf den grünen Pfeil in der oberen rechten Ecke des Codeabschnitts klicken.
 
 Wir haben uns für das tidyverse-Paket entschieden, weil es aus einer Reihe von Paketen besteht, die für verschiedene Aspekte der Arbeit mit Daten erforderlich sind, vom Laden von Daten über die Verarbeitung von Daten bis hin zur Visualisierung und Analyse von Daten. Außerdem haben diese Pakete eine gemeinsame Philosophie und sind so konzipiert, dass sie zusammenarbeiten. Sie können mehr über die Pakete im tidyverse unter [tidyverse.org](http://tidyverse.org/) erfahren.
 
@@ -66,7 +66,7 @@ Wir laden den Datensatz `arbuthnot` aus dem Paket `openintro`.
 data(arbuthnot)
 ```
 
-Die einzige Codezeile in diesem Codechunk weist R an, einige Daten zu laden: die Arbuthnot-Taufzahlen für Jungen und Mädchen. Sie sollten sehen, dass die Registerkarte *Environment* in der oberen rechten Ecke des RStudio-Fensters nun einen Datensatz namens "Arbuthnot" mit 82 Beobachtungen für 3 Variablen auflistet. Wenn Sie mit R arbeiten, werden Sie Objekte für eine Vielzahl von Zwecken erstellen. Manchmal laden Sie die Objekte in Ihren Arbeitsbereich, indem Sie ein Paket laden, wie wir es hier getan haben, aber manchmal erstellen Sie selbst Objekte als Nebenprodukt eines Berechnungsprozesses, für eine Analyse, die Sie durchgeführt haben, oder für eine Visualisierung, die Sie erstellt haben. Wie Sie Daten aus einer Textdatei einlesen, erfahren Sie in Kapitel @sec-einlesen.
+Die einzige Codezeile in diesem Code-Chunk weist R an, einige Daten zu laden: die Arbuthnot-Taufzahlen für Jungen und Mädchen. Sie sollten sehen, dass die Registerkarte *Environment* in der oberen rechten Ecke des RStudio-Fensters nun einen Datensatz namens "Arbuthnot" mit 82 Beobachtungen für 3 Variablen auflistet. Wenn Sie mit R arbeiten, werden Sie Objekte für eine Vielzahl von Zwecken erstellen. Manchmal laden Sie die Objekte in Ihren Arbeitsbereich, indem Sie ein Paket laden, wie wir es hier getan haben, aber manchmal erstellen Sie selbst Objekte als Nebenprodukt eines Berechnungsprozesses, für eine Analyse, die Sie durchgeführt haben, oder für eine Visualisierung, die Sie erstellt haben. Wie Sie Daten aus einer Textdatei einlesen, erfahren Sie in Kapitel @sec-einlesen.
 
 Der Arbuthnot-Datensatz geht auf die Arbeit von Dr. John Arbuthnot zurück, einem Arzt, Schriftsteller und Mathematiker aus dem 18. Jahrhundert. Er interessierte sich für das Verhältnis zwischen neugeborenen Jungen und neugeborenen Mädchen und sammelte daher die Taufeinträge für in London geborene Kinder für jedes Jahr zwischen 1629 und 1710. Auch hier können wir die Daten anzeigen, indem wir den unten stehenden Code ausführen oder den Namen des Datensatzes in die Konsole eingeben. Achten Sie auf die Schreibweise und Großschreibung! R unterscheidet Groß- und Kleinschreibung. Wenn Sie also versehentlich "Arbuthnot" eingeben, meldet R, dass das Objekt nicht gefunden werden kann.
 
@@ -74,13 +74,13 @@ Der Arbuthnot-Datensatz geht auf die Arbeit von Dr. John Arbuthnot zurück, eine
 arbuthnot
 ```
 
-Der Befehl `arbuthnot` (also der Name des Datensatzes) zeigt die Daten für uns an. Sie können im R Markdown durch den Datensatz blättern, wenn sie unter dem Datensatz auf "Next" klicken. Alternativ können Sie den Datensatz im Datenbetrachter (im Lesemodus) ansehen. Auf der Registerkarte *Environment* (im oberen rechten Bereich) werden die Objekte in Ihrer Umgebung aufgelistet. Wenn Sie auf den Namen `arbuthnot` klicken, öffnet sich ein *Data Viewer* Reiter neben Ihrer R Markdown Datei, der eine alternative Anzeige des Datensatzes bietet. Diese Anzeige sollte sich ähnlich anfühlen wie die Anzeige von Daten in Excel, wo Sie durch den Datensatz blättern können, um ihn zu prüfen. Im Gegensatz zu Excel können Sie die Daten auf dieser Registerkarte jedoch nicht bearbeiten. Wenn Sie mit der Ansicht der Daten fertig sind, können Sie diese Registerkarte schließen, indem Sie auf das "x" in der oberen linken Ecke klicken.
+Der Befehl `arbuthnot` (also der Name des Datensatzes) zeigt die Daten für uns an. Sie können im R Markdown durch den Datensatz blättern, wenn sie unter dem Datensatz auf "Next" klicken. Alternativ können Sie den Datensatz im Datenbetrachter (im Lesemodus) ansehen. Auf der Registerkarte *Environment* (im oberen rechten Bereich) werden die Objekte in Ihrer Umgebung aufgelistet. Wenn Sie auf den Namen `arbuthnot` klicken, öffnet sich ein *Data Viewer* Reiter neben Ihrer R Markdown-Datei, der eine alternative Anzeige des Datensatzes bietet. Diese Anzeige sollte sich ähnlich anfühlen wie die Anzeige von Daten in Excel, wo Sie durch den Datensatz blättern können, um ihn zu prüfen. Im Gegensatz zu Excel können Sie die Daten auf dieser Registerkarte jedoch nicht bearbeiten. Wenn Sie mit der Ansicht der Daten fertig sind, können Sie diese Registerkarte schließen, indem Sie auf das "x" in der oberen linken Ecke klicken.
 
 Wenn Sie sich die Daten ansehen, sollten Sie vier Zahlenspalten und 82 Zeilen sehen. Jede Zeile steht für ein anderes Jahr, in dem Arbuthnot Daten gesammelt hat. Der erste Eintrag in jeder Zeile ist die Zeilennummer (ein Index, mit dem wir bei Bedarf auf die Daten einzelner Jahre zugreifen können), der zweite ist das Jahr, und der dritte und vierte sind die Anzahl der in diesem Jahr getauften Jungen bzw. Mädchen.
 
 Beachten Sie, dass die Zeilennummern in der ersten Spalte nicht zu den Daten von Arbuthnot gehören. R fügt diese Zeilennummern als Teil des Ausdrucks hinzu, damit Sie visuelle Vergleiche anstellen können. Man kann sie sich als den Index vorstellen, den man auf der linken Seite eines Tabellenblatts sieht. In der Tat ist der Vergleich der Daten mit einer Tabellenkalkulation im Allgemeinen hilfreich. R hat die Daten von Arbuthnot in einem Objekt gespeichert, das einer Tabellenkalkulation oder einer Tabelle ähnelt und das R einen *Dataframe* nennt.
 
-Sie können die Dimensionen dieses Dataframes sowie die Namen der Variablen und die ersten paar Beobachtungen sehen, indem Sie den Namen des Datensatzes aufrufen oder alternative in die Funktion `glimpse()` einfügen, wie unten gezeigt:
+Sie können die Dimensionen dieses Dataframes sowie die Namen der Variablen und die ersten paar Beobachtungen sehen, indem Sie den Namen des Datensatzes aufrufen oder alternativ in die Funktion `glimpse()` einfügen, wie unten gezeigt:
 
 ```{r glimpse-data}
 glimpse(arbuthnot)
@@ -139,7 +139,7 @@ Verwenden Sie das Diagramm, um die folgende Frage zu beantworten:
 1.  Gibt es einen offensichtlichen Trend in der Zahl der getauften Mädchen im Laufe der Jahre? Wie würden Sie ihn beschreiben? Um sicherzustellen, dass Ihr Bericht umfassend ist, sollten Sie den Code, der zur Erstellung der Grafik erforderlich ist, sowie Ihre schriftliche Interpretation beifügen.
 :::
 
-Sie fragen sich vielleicht, woher Sie die Syntax für die Funktion `ggplot()` kennen sollen. Zum Glück dokumentiert R alle seine Funktionen ausführlich. Um zu erfahren, was eine Funktion tut und wie man sie benutzt (z.B. die Argumente der Funktion), geben Sie einfach ein Fragezeichen gefolgt von dem Namen der Funktion, die Sie interessiert, in die Konsole ein. Geben Sie Folgendes in Ihre Konsole ein:
+Sie fragen sich vielleicht, woher Sie die Syntax für die Funktion `ggplot()` kennen sollen. Zum Glück dokumentiert R alle seine Funktionen ausführlich. Um zu erfahren, was eine Funktion tut und wie man sie benutzt (z. B. die Argumente der Funktion), geben Sie einfach ein Fragezeichen gefolgt von dem Namen der Funktion, die Sie interessiert, in die Konsole ein. Geben Sie Folgendes in Ihre Konsole ein:
 
 ```{r plot-help, tidy = FALSE}
 ?ggplot
@@ -172,14 +172,14 @@ arbuthnot <- arbuthnot %>%
   mutate(total = boys + girls)
 ```
 
-Dieser Code besteht aus vielen neuen Teilen, die wir nun aufschlüsseln wollen. In der ersten Zeile tun wir zwei Dinge: (1) wir fügen eine neue Spalte `total` zu diesem aktualisierten Dataframe hinzu, und (2) wir überschreiben das vorhandenen Dataframe mit einem aktualisierten Dataframe, das die neue Spalte `total` enthält. Wir können diese beiden Schritte mit dem Operator **piping** (`%>%`) miteinander verknüpfen. Der Piping-Operator nimmt die Ausgabe des vorherigen Ausdrucks und leitet sie in das erste Argument des nächsten Ausdrucks ein.
+Dieser Code besteht aus vielen neuen Teilen, die wir nun aufschlüsseln wollen. In der ersten Zeile tun wir zwei Dinge: (1) wir fügen eine neue Spalte `total` zu diesem aktualisierten Dataframe hinzu, und (2) wir überschreiben das vorhandenen Dataframe mit einem aktualisierten Dataframe, das die neue Spalte `total` enthält. Wir können diese beiden Schritte mit dem Operator **piping** (`%>%`) miteinander verknüpfen. Der Pipe-Operator nimmt die Ausgabe des vorherigen Ausdrucks und leitet sie in das erste Argument des nächsten Ausdrucks ein.
 
 Um unsere Analogie mit mathematischen Funktionen fortzusetzen, ist `x %>% f(y)` gleichbedeutend mit `f(x, y)`. Die Verbindung von `arbuthnot` und `mutate(total = boys + girls)` mit dem Pipe-Operator ist dasselbe wie die Eingabe von `mutate(arbuthnot, total = boys + girls)`, wobei `arbuthnot` das erste Argument der Funktion `mutate()` wird.
 
 :::{.info}
 **Eine Anmerkung zum Piping:** Beachten Sie, dass wir diese beiden Codezeilen wie folgt lesen können:
 
-*"Nehmen Sie den Datensatz "arbuthnot" und **pipen** Sie ihn in die Funktion "mutate". Verändern Sie (*mutate*) den `arbuthnot`-Datensatz, indem Sie eine neue Variable namens `total` erstellen, die die Summe der Variablen namens `boys` und `girls` ist. Weisen Sie dann den resultierenden Datensatz dem Objekt mit dem Namen `arbuthnot` zu, d.h. überschreiben Sie den alten `arbuthnot`-Datensatz mit dem neuen, der die neue Variable enthält."*
+*"Nehmen Sie den Datensatz "arbuthnot" und **pipen** Sie ihn in die Funktion "mutate". Verändern Sie (*mutate*) den `arbuthnot`-Datensatz, indem Sie eine neue Variable namens `total` erstellen, die die Summe der Variablen namens `boys` und `girls` ist. Weisen Sie dann den resultierenden Datensatz dem Objekt mit dem Namen `arbuthnot` zu, d. h. überschreiben Sie den alten `arbuthnot`-Datensatz mit dem neuen, der die neue Variable enthält."*
 
 Dies ist gleichbedeutend mit dem Durchgehen jeder Zeile und dem Aufsummieren der Anzahl der Jungen und Mädchen für dieses Jahr und dem Aufzeichnen dieses Wertes in einer neuen Spalte mit dem Namen `total`.
 :::
