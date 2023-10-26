@@ -15,7 +15,7 @@ library(kableExtra)
 
 ## Aufbau eines Darstellungsbefehls
 
-Das Paket `ggplot2` ist ein sehr mächtiges Visualisierungswerkzeug. Der Name steht für "the grammar of graphics". Das bedeutet, dass man mithilfe von verschiedenen Funktion in `ggplot2` seine Grafik Schritt für Schritt aufbaut, wie einen (grammatikalisch korrekten) Satz. In aller Kürze bedeutet das:
+Das Paket `ggplot2` ist ein sehr mächtiges Visualisierungswerkzeug. Der Name steht für "the grammar of graphics". Es ist Teil der Paketsammlung `tidyverse`, über die Sie in Kapitel @explorative-datenanalyse mehr lernen werden. In `ggplot2` baut man seine Grafik mithilfe von verschiedenen Funktion Schritt für Schritt wie einen (grammatikalisch korrekten) Satz auf. In aller Kürze bedeutet das:
 
 > Eine statistische Grafik ist eine Zuordnung (`mapping`) von Variablen in einem Datensatz (`data`) zu (ästhetischen) Attributen (`aes`) von geometrischen Objekten (`geom`).
 

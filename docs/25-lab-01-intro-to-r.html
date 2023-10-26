@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Übung zur Vorlesung Weiterführende Methoden der empirischen Forschung - 4&nbsp; Lab 01: Einführung in R und RStudio</title>
+<title>Übung zur Vorlesung Weiterführende Methoden der empirischen Forschung - 6&nbsp; Lab 01: Einführung in R und RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./30-lab-02-intro-to-data.html" rel="next">
-<link href="./04-einlesen.html" rel="prev">
+<link href="./12-regression-inferenz.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -138,7 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -209,7 +209,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">REGRESSIONSANALYSE</span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">REGRESSIONSANALYSE</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lineare Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-regression-inferenz.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferenz in linearer Regression</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">MASCHINELLES LERNEN</span>
@@ -224,12 +241,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./25-lab-01-intro-to-r.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></a>
+  <a href="./25-lab-01-intro-to-r.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-lab-02-intro-to-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab 02: Pünktlichkeit von Flügen</span></a>
+  <a href="./30-lab-02-intro-to-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab 02: Pünktlichkeit von Flügen</span></a>
   </div>
 </li>
       </ul>
@@ -263,20 +280,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#die-entwicklungsumgebung-rstudio" id="toc-die-entwicklungsumgebung-rstudio" class="nav-link active" data-scroll-target="#die-entwicklungsumgebung-rstudio"><span class="toc-section-number">4.1</span>  Die Entwicklungsumgebung RStudio</a>
+  <li><a href="#die-entwicklungsumgebung-rstudio" id="toc-die-entwicklungsumgebung-rstudio" class="nav-link active" data-scroll-target="#die-entwicklungsumgebung-rstudio"><span class="toc-section-number">6.1</span>  Die Entwicklungsumgebung RStudio</a>
   <ul class="collapse">
-  <li><a href="#r-pakete" id="toc-r-pakete" class="nav-link" data-scroll-target="#r-pakete"><span class="toc-section-number">4.1.1</span>  R-Pakete</a></li>
-  <li><a href="#erstellen-eines-reproduzierbaren-berichts" id="toc-erstellen-eines-reproduzierbaren-berichts" class="nav-link" data-scroll-target="#erstellen-eines-reproduzierbaren-berichts"><span class="toc-section-number">4.1.2</span>  Erstellen eines reproduzierbaren Berichts</a></li>
+  <li><a href="#r-pakete" id="toc-r-pakete" class="nav-link" data-scroll-target="#r-pakete"><span class="toc-section-number">6.1.1</span>  R-Pakete</a></li>
+  <li><a href="#erstellen-eines-reproduzierbaren-berichts" id="toc-erstellen-eines-reproduzierbaren-berichts" class="nav-link" data-scroll-target="#erstellen-eines-reproduzierbaren-berichts"><span class="toc-section-number">6.1.2</span>  Erstellen eines reproduzierbaren Berichts</a></li>
   </ul></li>
-  <li><a href="#taufaufzeichnungen-von-dr.-arbuthnot" id="toc-taufaufzeichnungen-von-dr.-arbuthnot" class="nav-link" data-scroll-target="#taufaufzeichnungen-von-dr.-arbuthnot"><span class="toc-section-number">4.2</span>  Taufaufzeichnungen von Dr.&nbsp;Arbuthnot</a></li>
-  <li><a href="#explorative-analyse" id="toc-explorative-analyse" class="nav-link" data-scroll-target="#explorative-analyse"><span class="toc-section-number">4.3</span>  Explorative Analyse</a>
+  <li><a href="#taufaufzeichnungen-von-dr.-arbuthnot" id="toc-taufaufzeichnungen-von-dr.-arbuthnot" class="nav-link" data-scroll-target="#taufaufzeichnungen-von-dr.-arbuthnot"><span class="toc-section-number">6.2</span>  Taufaufzeichnungen von Dr.&nbsp;Arbuthnot</a></li>
+  <li><a href="#explorative-analyse" id="toc-explorative-analyse" class="nav-link" data-scroll-target="#explorative-analyse"><span class="toc-section-number">6.3</span>  Explorative Analyse</a>
   <ul class="collapse">
-  <li><a href="#datenvisualisierung" id="toc-datenvisualisierung" class="nav-link" data-scroll-target="#datenvisualisierung"><span class="toc-section-number">4.3.1</span>  Datenvisualisierung</a></li>
-  <li><a href="#r-als-großer-taschenrechner" id="toc-r-als-großer-taschenrechner" class="nav-link" data-scroll-target="#r-als-großer-taschenrechner"><span class="toc-section-number">4.3.2</span>  R als großer Taschenrechner</a></li>
-  <li><a href="#hinzufügen-einer-neuen-variable-zum-dataframe" id="toc-hinzufügen-einer-neuen-variable-zum-dataframe" class="nav-link" data-scroll-target="#hinzufügen-einer-neuen-variable-zum-dataframe"><span class="toc-section-number">4.3.3</span>  Hinzufügen einer neuen Variable zum Dataframe</a></li>
+  <li><a href="#datenvisualisierung" id="toc-datenvisualisierung" class="nav-link" data-scroll-target="#datenvisualisierung"><span class="toc-section-number">6.3.1</span>  Datenvisualisierung</a></li>
+  <li><a href="#r-als-großer-taschenrechner" id="toc-r-als-großer-taschenrechner" class="nav-link" data-scroll-target="#r-als-großer-taschenrechner"><span class="toc-section-number">6.3.2</span>  R als großer Taschenrechner</a></li>
+  <li><a href="#hinzufügen-einer-neuen-variable-zum-dataframe" id="toc-hinzufügen-einer-neuen-variable-zum-dataframe" class="nav-link" data-scroll-target="#hinzufügen-einer-neuen-variable-zum-dataframe"><span class="toc-section-number">6.3.3</span>  Hinzufügen einer neuen Variable zum Dataframe</a></li>
   </ul></li>
-  <li><a href="#mehr-übungen" id="toc-mehr-übungen" class="nav-link" data-scroll-target="#mehr-übungen"><span class="toc-section-number">4.4</span>  Mehr Übungen</a></li>
-  <li><a href="#ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio" id="toc-ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio" class="nav-link" data-scroll-target="#ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio"><span class="toc-section-number">4.5</span>  Ressourcen zum Erlernen von R und zum Arbeiten in RStudio</a></li>
+  <li><a href="#mehr-übungen" id="toc-mehr-übungen" class="nav-link" data-scroll-target="#mehr-übungen"><span class="toc-section-number">6.4</span>  Mehr Übungen</a></li>
+  <li><a href="#ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio" id="toc-ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio" class="nav-link" data-scroll-target="#ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio"><span class="toc-section-number">6.5</span>  Ressourcen zum Erlernen von R und zum Arbeiten in RStudio</a></li>
   </ul>
 </nav>
     </div>
@@ -285,7 +302,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-lab-01-intro-to-r" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></span></h1>
+<h1 class="title"><span id="sec-lab-01-intro-to-r" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></span></h1>
 </div>
 
 
@@ -303,22 +320,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="info">
 <p>Das ist die deutsche Übersetzung des “OpenIntro Labs for R and tidyverse” <a href="http://openintrostat.github.io/oilabs-tidy/01_intro_to_r/intro_to_r.html">1. Intro to R</a>. Es ist Teil des Buches von Çetinkaya-Rundel et al., <a href="https://openintro-ims.netlify.app/index.html">Introduction to Modern Statistics</a>, lizenziert unter CC-BY-SA 3.0. Übersetzt mit www.DeepL.com/Translator, bearbeitet und ergänzt von C. Bogner.</p>
 </div>
-<section id="die-entwicklungsumgebung-rstudio" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="die-entwicklungsumgebung-rstudio"><span class="header-section-number">4.1</span> Die Entwicklungsumgebung RStudio</h2>
+<section id="die-entwicklungsumgebung-rstudio" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="die-entwicklungsumgebung-rstudio"><span class="header-section-number">6.1</span> Die Entwicklungsumgebung RStudio</h2>
 <p>Ziel dieser Übung ist es, Sie mit R und RStudio vertraut zu machen, die Sie im Laufe des Kurses sowohl zum Erlernen der im Kurs besprochenen statistischen Konzepte als auch zur Analyse realer Daten und zum Ziehen fundierter Schlussfolgerungen verwenden werden. Der Unterschied zwischen R und RStudio ist folgender: R ist der Name der Programmiersprache selbst und RStudio ist eine praktische Schnittstelle für die Arbeit mit R. Genauer nennt man die Software RStudio eine integrierte Entwicklungsumgebung (IDE, von englisch <em>integrated development environment</em>).</p>
 <p>Im Laufe der Übungen werden Sie ermutigt, über das hinauszugehen, was die Übungen vorgeben; die Bereitschaft zum Experimentieren wird Sie zu einem/einer viel besseren Programmierer*in machen! Bevor wir jedoch so weit sind, müssen Sie einige Grundkenntnisse in der Sprache R erwerben. Zuerst werden wir die grundlegenden Bausteine von R und RStudio erkunden: die Entwicklungsumgebung RStudio, das Laden von Daten und grundlegende Befehle für die Arbeit mit Daten in R.</p>
-<p>Fahren Sie fort und starten Sie RStudio. Sie sollten ein Fenster sehen, das wie in <a href="#fig-r-interface-2023">Abbildung&nbsp;<span>4.1</span></a> aussieht.</p>
+<p>Fahren Sie fort und starten Sie RStudio. Sie sollten ein Fenster sehen, das wie in <a href="#fig-r-interface-2023">Abbildung&nbsp;<span>6.1</span></a> aussieht.</p>
 <div id="fig-r-interface-2023" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="figures/r-interface-2023.png" class="img-fluid figure-img" width="600"></p>
-<p></p><figcaption class="figure-caption">Abbildung&nbsp;4.1: Die Entwicklungsumgebung RStudio</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;6.1: Die Entwicklungsumgebung RStudio</figcaption><p></p>
 </figure>
 </div>
 <p>Das Panel unten links ist der Ort, an dem R arbeitet. Dieser Bereich wird <em>Konsole</em> genannt. Jedes Mal, wenn Sie RStudio starten, erscheint oben in der Konsole derselbe Text, der Ihnen die Version von R angibt, die Sie gerade ausführen. Unterhalb dieser Information befindet sich die <em>Eingabeaufforderung</em>, die durch das Symbol <code>&gt;</code> gekennzeichnet ist. Wie der Name schon sagt, ist dieser Prompt eigentlich eine Aufforderung: eine Aufforderung zu einem Befehl. Ursprünglich ging es bei der Interaktion mit R nur darum, Befehle einzugeben und die Ausgabe zu interpretieren. Diese Befehle und ihre Syntax haben sich im Laufe der Jahrzehnte (im wahrsten Sinne des Wortes) weiterentwickelt und bieten nun eine für viele Benutzer recht natürliche Möglichkeit, auf Daten zuzugreifen und statistische Berechnungen zu organisieren, zu beschreiben und aufzurufen.</p>
 <p>Das Feld oben rechts enthält Ihre Arbeitsumgebung (<em>Environment</em>) sowie eine Aufzeichnung (<em>History</em>) der Befehle, die Sie zuvor eingegeben haben.</p>
 <p>Das Feld unten rechts enthält Registerkarten zum Durchsuchen der <em>Files</em> (Dateien) in Ihrem Projektordner, zum Zugriff auf <em>Help</em> (Hilfedateien) für R-Funktionen, zum Installieren und Verwalten von <em>Packages</em> (R-Paketen) und für <em>Plots</em> (Visualisierungen). Standardmäßig werden alle von Ihnen erstellten Datenvisualisierungen direkt unter dem Code angezeigt, mit dem Sie sie erstellt haben. Wenn Sie möchten, dass Ihre Darstellungen auf der Registerkarte <em>Plots</em> erscheinen, müssen Sie Ihre globalen Optionen ändern.</p>
-<section id="r-pakete" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="r-pakete"><span class="header-section-number">4.1.1</span> R-Pakete</h3>
+<section id="r-pakete" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="r-pakete"><span class="header-section-number">6.1.1</span> R-Pakete</h3>
 <p>R ist eine Open-Source-Programmiersprache, was bedeutet, dass Benutzer Pakete beisteuern können, die uns das Leben leichter machen, und wir können sie kostenlos nutzen. Für diese Übung und viele andere in der Zukunft werden wir die folgenden Pakete verwenden:</p>
 <ul>
 <li>Das <strong>tidyverse</strong> “Dach”-Paket, das eine Reihe von vielen verschiedenen R-Paketen enthält: für Datenverarbeitung und Datenvisualisierung</li>
@@ -343,13 +360,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Wir haben uns für das tidyverse-Paket entschieden, weil es aus einer Reihe von Paketen besteht, die für verschiedene Aspekte der Arbeit mit Daten erforderlich sind, vom Laden von Daten über die Verarbeitung von Daten bis hin zur Visualisierung und Analyse von Daten. Außerdem haben diese Pakete eine gemeinsame Philosophie und sind so konzipiert, dass sie zusammenarbeiten. Sie können mehr über die Pakete im tidyverse unter <a href="http://tidyverse.org/">tidyverse.org</a> erfahren.</p>
 </section>
-<section id="erstellen-eines-reproduzierbaren-berichts" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="erstellen-eines-reproduzierbaren-berichts"><span class="header-section-number">4.1.2</span> Erstellen eines reproduzierbaren Berichts</h3>
+<section id="erstellen-eines-reproduzierbaren-berichts" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="erstellen-eines-reproduzierbaren-berichts"><span class="header-section-number">6.1.2</span> Erstellen eines reproduzierbaren Berichts</h3>
 <p>Wir werden R Markdown verwenden, um reproduzierbare Berichte zu erstellen. Wie und warum Sie das machen sollen, haben Sie bereits in Kapitel <a href="01-erste-schritte.html"><span>Kapitel&nbsp;1</span></a> gelernt.</p>
 </section>
 </section>
-<section id="taufaufzeichnungen-von-dr.-arbuthnot" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="taufaufzeichnungen-von-dr.-arbuthnot"><span class="header-section-number">4.2</span> Taufaufzeichnungen von Dr.&nbsp;Arbuthnot</h2>
+<section id="taufaufzeichnungen-von-dr.-arbuthnot" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="taufaufzeichnungen-von-dr.-arbuthnot"><span class="header-section-number">6.2</span> Taufaufzeichnungen von Dr.&nbsp;Arbuthnot</h2>
 <p>Wir laden den Datensatz <code>arbuthnot</code> aus dem Paket <code>openintro</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(arbuthnot)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -383,8 +400,8 @@ $ girls &lt;int&gt; 4683, 4457, 4102, 4590, 4839, 4820, 4928, 4605, 4457, 4952, 
 </div>
 <p>Wir können sehen, dass es 82 Beobachtungen und 3 Variablen in diesem Datensatz gibt. Die Namen der Variablen sind <code>year</code>, <code>boys</code> und <code>girls</code>. An dieser Stelle werden Sie vielleicht bemerken, dass viele der Befehle in R sehr wie Funktionen aus dem Mathematikunterricht aussehen; das heißt, der Aufruf von R-Befehlen bedeutet, dass man einer Funktion eine Anzahl von Eingaben (die sogenannten Argumente) gibt, die die Funktion verwendet, um eine Ausgabe zu erzeugen. Der Befehl <code>glimpse()</code> zum Beispiel nimmt ein einziges Argument, den Namen eines Dataframes, und erzeugt eine Anzeige des Datensatzes als Ausgabe.</p>
 </section>
-<section id="explorative-analyse" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="explorative-analyse"><span class="header-section-number">4.3</span> Explorative Analyse</h2>
+<section id="explorative-analyse" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="explorative-analyse"><span class="header-section-number">6.3</span> Explorative Analyse</h2>
 <p>Beginnen wir damit, die Daten ein wenig genauer zu untersuchen. Wir können auf die Daten in einer einzelnen Spalte eines Dataframes zugreifen, indem wir die Spalte mit einem “$” extrahieren. Der folgende Code extrahiert die Spalte <code>boys</code> aus dem Dataframe “Arbuthnot”.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>arbuthnot<span class="sc">$</span>boys</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -404,8 +421,8 @@ $ girls &lt;int&gt; 4683, 4457, 4102, 4590, 4839, 4820, 4928, 4605, 4457, 4952, 
 </ol>
 </div>
 <p>Beachten Sie, dass die Art und Weise, wie R diese Daten ausgibt, unterschiedlich ist. Als wir uns den kompletten Dataframes angesehen haben, sahen wir 82 Zeilen, eine in jeder Zeile der Anzeige. Diese Daten wurden aus dem Dataframe extrahiert, sodass sie nicht mehr in einer Tabelle mit anderen Variablen strukturiert sind. Stattdessen werden diese Daten direkt nacheinander angezeigt. Objekte, die auf diese Weise ausgedruckt werden, nennt man <em>Vektoren</em>; ähnlich wie die Vektoren, die Sie aus dem Mathematikunterricht kennen, stellen Vektoren eine Liste von Zahlen dar. R hat Zahlen in [Klammern] auf der linken Seite des Ausdrucks hinzugefügt, um die Position jedes Eintrags innerhalb des Vektors anzugeben. Zum Beispiel folgt 5218 auf <code>[1]</code>, was bedeutet, dass <code>5218</code> der erste Eintrag im Vektor ist. Wenn “43” am Anfang einer Zeile angezeigt wird, bedeutet dies, dass die erste Zahl in dieser Zeile dem 43. Eintrag in diesem Vektor entspricht.</p>
-<section id="datenvisualisierung" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="datenvisualisierung"><span class="header-section-number">4.3.1</span> Datenvisualisierung</h3>
+<section id="datenvisualisierung" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="datenvisualisierung"><span class="header-section-number">6.3.1</span> Datenvisualisierung</h3>
 <p>R verfügt über einige leistungsstarke Funktionen zur Erstellung von Grafiken. Mit dem folgenden Code können wir eine einfache Darstellung der Anzahl der getauften Mädchen pro Jahr erstellen:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> arbuthnot, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> girls)) <span class="sc">+</span> </span>
@@ -446,8 +463,8 @@ $ girls &lt;int&gt; 4683, 4457, 4102, 4590, 4839, 4820, 4928, 4605, 4457, 4952, 
 </div>
 <p>Beachten Sie, dass die Hilfedatei in den Vordergrund rückt und die Darstellung im unteren rechten Bereich ersetzt. Sie können zwischen den Registerkarten hin- und herschalten, indem Sie auf ihre Namen klicken.</p>
 </section>
-<section id="r-als-großer-taschenrechner" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="r-als-großer-taschenrechner"><span class="header-section-number">4.3.2</span> R als großer Taschenrechner</h3>
+<section id="r-als-großer-taschenrechner" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="r-als-großer-taschenrechner"><span class="header-section-number">6.3.2</span> R als großer Taschenrechner</h3>
 <p>Nehmen wir nun an, wir möchten die Gesamtzahl der Taufen darstellen. Um dies zu berechnen, könnten wir R als einen großen Taschenrechner verwenden. Dazu können wir mathematische Ausdrücke wie die folgende Berechnung in die Konsole eintippen.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5218</span> <span class="sc">+</span> <span class="dv">4683</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -470,8 +487,8 @@ $ girls &lt;int&gt; 4683, 4457, 4102, 4590, 4839, 4820, 4928, 4605, 4457, 4952, 
 </div>
 <p>Was Sie sehen, ist eine Liste von 82 Zahlen. Diese Zahlen erscheinen als Liste, weil wir mit Vektoren und nicht mit einem Dataframe arbeiten. Jede Zahl steht für die Summe der Anzahl der Jungen und Mädchen, die in diesem Jahr getauft wurden. Sie können einen Blick auf die ersten Zeilen der Spalten <code>boys</code> und <code>girls</code> werfen, um zu sehen, ob die Berechnung richtig ist.</p>
 </section>
-<section id="hinzufügen-einer-neuen-variable-zum-dataframe" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="hinzufügen-einer-neuen-variable-zum-dataframe"><span class="header-section-number">4.3.3</span> Hinzufügen einer neuen Variable zum Dataframe</h3>
+<section id="hinzufügen-einer-neuen-variable-zum-dataframe" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="hinzufügen-einer-neuen-variable-zum-dataframe"><span class="header-section-number">6.3.3</span> Hinzufügen einer neuen Variable zum Dataframe</h3>
 <p>Wir möchten diesen neuen Vektor der Gesamtzahl der Taufen verwenden, um einige Diagramme zu erstellen, daher möchten wir ihn als permanente Spalte in unserem Dataframe speichern. Dies können wir mit dem folgenden Code tun:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>arbuthnot <span class="ot">&lt;-</span> arbuthnot <span class="sc">%&gt;%</span></span>
@@ -537,8 +554,8 @@ $ girls &lt;int&gt; 4683, 4457, 4102, 4590, 4839, 4820, 4928, 4605, 4457, 4952, 
 <p>Dieser Befehl fügt dem Dataframe <code>arbuthnot</code> eine neue Variable hinzu, die entweder den Wert <code>TRUE</code> enthält, wenn es in diesem Jahr mehr Jungen als Mädchen gab, oder <code>FALSE</code>, wenn dies nicht der Fall war (die Antwort mag Sie überraschen). Diese Variable enthält eine andere Art von Daten als die, die wir bisher kennengelernt haben. Alle anderen Spalten im Dataframe <code>arbuthnot</code> haben numerische Werte (das Jahr, die Anzahl der Jungen und Mädchen). Hier haben wir R gebeten, <em>logische</em> Daten zu erstellen, also Daten, deren Werte entweder <code>TRUE</code> oder <code>FALSE</code> sind. Im Allgemeinen werden bei der Datenanalyse viele verschiedene Datentypen verwendet, und ein Grund für die Verwendung von R ist, dass es in der Lage ist, viele dieser Datentypen darzustellen und mit ihnen zu rechnen.</p>
 </section>
 </section>
-<section id="mehr-übungen" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="mehr-übungen"><span class="header-section-number">4.4</span> Mehr Übungen</h2>
+<section id="mehr-übungen" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="mehr-übungen"><span class="header-section-number">6.4</span> Mehr Übungen</h2>
 <p>Auf den vorangegangenen Seiten haben Sie einige der Anzeigen und vorläufigen Analysen von Arbuthnots Taufdaten nachgebildet. Ihre Aufgabe besteht darin, diese Schritte zu wiederholen, allerdings für die heutigen Geburtsdaten in den Vereinigten Staaten. Die Daten sind in einem Datenrahmen mit dem Namen <code>present</code> gespeichert.</p>
 <p>Um die Minimal- und Maximalwerte der Spalten zu ermitteln, können Sie die Funktionen <code>min()</code> und <code>max()</code> innerhalb eines <code>summarize()</code>-Aufrufs verwenden, über den Sie im Verlaufe des Kurses mehr erfahren werden.</p>
 <p>Hier ist ein Beispiel dafür, wie man die minimale und maximale Anzahl der Geburten von Jungen in einem Jahr ermitteln kann:</p>
@@ -571,8 +588,8 @@ $ girls &lt;int&gt; 4683, 4457, 4102, 4590, 4839, 4820, 4928, 4605, 4457, 4952, 
 </div>
 <p>Diese Daten stammen aus Berichten der Centers for Disease Control. Sie können mehr über sie erfahren, indem Sie die Hilfedatei mit dem Befehl <code>?present</code> aufrufen.</p>
 </section>
-<section id="ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio"><span class="header-section-number">4.5</span> Ressourcen zum Erlernen von R und zum Arbeiten in RStudio</h2>
+<section id="ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="ressourcen-zum-erlernen-von-r-und-zum-arbeiten-in-rstudio"><span class="header-section-number">6.5</span> Ressourcen zum Erlernen von R und zum Arbeiten in RStudio</h2>
 <p>Das war eine kurze Einführung in R und RStudio, aber wir werden Ihnen im weiteren Verlauf des Kurses weitere Funktionen und ein umfassenderes Gefühl für die Sprache vermitteln.</p>
 <p>In diesem Kurs werden wir die R-Pakete aus dem <strong>tidyverse</strong> verwenden. Das Buch [R For Data Science] (https://r4ds.hadley.nz/) von Wickham et al.&nbsp;ist eine fantastische Quelle für die Datenanalyse in R mit tidyverse. Wenn Sie nach R-Code suchen, stellen Sie sicher, dass Sie auch diese Paketnamen in Ihre Suchanfrage aufnehmen. Suchen Sie zum Beispiel nicht nach “scatterplot in R”, sondern nach “scatterplot in R with the tidyverse”.</p>
 <p>Diese Unterlagen können sich im Laufe des Semesters als nützlich erweisen:</p>
@@ -808,13 +825,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-einlesen.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Daten in R einlesen und aus R speichern</span></span>
+      <a href="./12-regression-inferenz.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Inferenz in linearer Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./30-lab-02-intro-to-data.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab 02: Pünktlichkeit von Flügen</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab 02: Pünktlichkeit von Flügen</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -91,4 +91,5 @@ Bitte speichern Sie Ihre Arbeit regelmäßig ab!
 
 
 ## Weiterführende Literatur
-r4ds, Kapitel 4 und 27 [@r4ds]
+- r4ds, Kapitel 27 [R for Data Science](https://r4ds.had.co.nz/), 1. Auflage.
+- Wenn Sie RMarkdaown bereits kennen und gerne weiter lernen möchte, empfehle ich [Quatro](https://quarto.org/). Ein Einstieg empfehlen sich die Kapitel 29 und 30 in r4ds [@r4ds], 2. Auflage.

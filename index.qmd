@@ -1,4 +1,3 @@
-
 # Vorwort {.unnumbered}
 
 In dieser Veranstaltung werden wir folgende Werkzeuge verwenden:
@@ -16,16 +15,17 @@ In dieser Veranstaltung werden wir folgende Werkzeuge verwenden:
 
 -   Daten für statistische Analysen aufbereiten
 -   Explorative (beschreibende) Datenanalyse durchführen
+-   Eine Regressionsanalyse durchführen
+-   Ausgewählte Methoden des maschinellen Lernens kennen und anwenden
 -   Daten visualisieren
 -   Ergebnisse der Analysen reproduzierbar darstellen
 
 **Statistische Methoden**
 
--   Einfache statistische Kenngrößen (Mittelwert, Standardabweichung etc.) berechnen
--   Eine Korrelation zwischen zwei Datensätzen berechnen
--   Hypothesentests durchführen und die Ergebnisse richtig berichten und interpretieren
--   Konfidenzintervalle berechnen und interpretieren
 -   Ein lineares Modell berechnen, die Ergebnisse darstellen und interpretieren
+-   Die Inferenz (Standardfehler, Konfidenzintervalle) der linearen Regression anwenden und interpretieren
+-   Das Bootstrapverfahren und seine Vorteile und Einschränkungen kennen und interpretieren
+-   Die Verfahren des maschinellen Lernens $k$-means clustering und random forest erklären und interpretieren
 :::
 
 ## Was mir im Umgang miteinander wichtig ist {-}

@@ -228,27 +228,59 @@ div.csl-indent {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">REGRESSIONSANALYSE</span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">EXPLORATIVE DATENANALYSE</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-explorative-datenanalyse.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Explorative Datenanalyse mit tidyverse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">REGRESSIONSANALYSE</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-regression.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lineare Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-regression-inferenz.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inferenz in linearer Regression</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">MASCHINELLES LERNEN</span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">LABS: EIGENSTÄNDIGE ÜBUNGEN</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">LABS: EIGENSTÄNDIGE ÜBUNGEN</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./25-lab-01-intro-to-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></a>
+  <a href="./25-lab-01-intro-to-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab 01: Einführung in R und RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30-lab-02-intro-to-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab 02: Pünktlichkeit von Flügen</span></a>
+  <a href="./30-lab-02-intro-to-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab 02: Pünktlichkeit von Flügen</span></a>
   </div>
 </li>
       </ul>
@@ -260,12 +292,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Anhang</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Anhang</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./100-aufgabensammlung.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Aufgabensammlung</span></a>
@@ -325,7 +357,7 @@ div.csl-indent {
 </div>
 <section id="aufbau-eines-darstellungsbefehls" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="aufbau-eines-darstellungsbefehls"><span class="header-section-number">2.1</span> Aufbau eines Darstellungsbefehls</h2>
-<p>Das Paket <code>ggplot2</code> ist ein sehr mächtiges Visualisierungswerkzeug. Der Name steht für “the grammar of graphics”. Das bedeutet, dass man mithilfe von verschiedenen Funktion in <code>ggplot2</code> seine Grafik Schritt für Schritt aufbaut, wie einen (grammatikalisch korrekten) Satz. In aller Kürze bedeutet das:</p>
+<p>Das Paket <code>ggplot2</code> ist ein sehr mächtiges Visualisierungswerkzeug. Der Name steht für “the grammar of graphics”. Es ist Teil der Paketsammlung <code>tidyverse</code>, über die Sie in Kapitel <span class="citation" data-cites="explorative-datenanalyse">(<a href="references.html#ref-explorative-datenanalyse" role="doc-biblioref"><strong>explorative-datenanalyse?</strong></a>)</span> mehr lernen werden. In <code>ggplot2</code> baut man seine Grafik mithilfe von verschiedenen Funktion Schritt für Schritt wie einen (grammatikalisch korrekten) Satz auf. In aller Kürze bedeutet das:</p>
 <blockquote class="blockquote">
 <p>Eine statistische Grafik ist eine Zuordnung (<code>mapping</code>) von Variablen in einem Datensatz (<code>data</code>) zu (ästhetischen) Attributen (<code>aes</code>) von geometrischen Objekten (<code>geom</code>).</p>
 </blockquote>

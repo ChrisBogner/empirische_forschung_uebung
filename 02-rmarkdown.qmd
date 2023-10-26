@@ -49,7 +49,8 @@ Ein weiteres [Video](https://www.youtube.com/watch?v=pjL2uP-fmPY&list=PLjTlxb-wK
 Intro zu Kapitel 2 (Basics), Kapitel 3.2.1 und 3.2.2 in @RMarkdownGuide
 
 ## Weiterführende Literatur
-r4ds, Kapitel 27 [@r4ds]
+- r4ds, Kapitel 27 [R for Data Science](https://r4ds.had.co.nz/), 1. Auflage.
+- Wenn Sie RMarkdaown bereits kennen und gerne weiter lernen möchte, empfehle ich [Quatro](https://quarto.org/). Ein Einstieg empfehlen sich die Kapitel 29 und 30 in r4ds [@r4ds], 2. Auflage.
 
 ## Aufgaben
 

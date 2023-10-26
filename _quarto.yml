@@ -15,8 +15,13 @@ book:
         - 01-erste-schritte.qmd
         - 03-ggplot.qmd
         - 04-einlesen.qmd
-    # - part: "EXPLORATIVE DATENANALYSE"
+    - part: "EXPLORATIVE DATENANALYSE"
+      chapters: 
+        - 06-explorative-datenanalyse.qmd
     - part: "REGRESSIONSANALYSE"
+      chapters:
+        - 11-regression.qmd
+        - 12-regression-inferenz.qmd
     - part: "MASCHINELLES LERNEN"
     - part: "LABS: EIGENSTÄNDIGE ÜBUNGEN"
       chapters: 
