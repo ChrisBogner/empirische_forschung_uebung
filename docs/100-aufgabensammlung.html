@@ -348,6 +348,10 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#verdichtung" id="toc-verdichtung" class="nav-link" data-scroll-target="#verdichtung"><span class="toc-section-number">A.11.1</span>  Bodenverdichtung</a></li>
   </ul></li>
+  <li><a href="#maschinelles-lernen" id="toc-maschinelles-lernen" class="nav-link" data-scroll-target="#maschinelles-lernen"><span class="toc-section-number">A.12</span>  Maschinelles Lernen</a>
+  <ul class="collapse">
+  <li><a href="#klassifikation-mit-knn" id="toc-klassifikation-mit-knn" class="nav-link" data-scroll-target="#klassifikation-mit-knn"><span class="toc-section-number">A.12.1</span>  Klassifikation mit KNN</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -375,7 +379,7 @@ div.csl-indent {
 <h2 data-number="A.1" class="anchored" data-anchor-id="erste-schritte"><span class="header-section-number">A.1</span> Erste Schritte</h2>
 <section id="morphometrische-messungen-an-vögeln" class="level3" data-number="A.1.1">
 <h3 data-number="A.1.1" class="anchored" data-anchor-id="morphometrische-messungen-an-vögeln"><span class="header-section-number">A.1.1</span> Morphometrische Messungen an Vögeln</h3>
-<p>In einer Studie wurden 1100 Spitzschwanzammer (<em>Ammodramus caudacutus</em>) vermessen. Wir nutzen einen Teil des Datensatzes <span class="citation" data-cites="Zuur2009">(<a href="references.html#ref-Zuur2009" role="doc-biblioref"><strong>Zuur2009?</strong></a>)</span>. Die gemessenen Variablen sind Fluegel, Fuss (Tarsus), Kopf, Gewicht. Leider git die Datenquelle die Messeinheiten nicht an. Die Daten sind wie folgt:</p>
+<p>In einer Studie wurden 1100 Spitzschwanzammer (<em>Ammodramus caudacutus</em>) vermessen. Wir nutzen einen Teil des Datensatzes <span class="citation" data-cites="Zuur2009">(<a href="references.html#ref-Zuur2009" role="doc-biblioref">Zuur, Ieno, and Meesters 2009</a>)</span>. Die gemessenen Variablen sind Fluegel, Fuss (Tarsus), Kopf, Gewicht. Leider git die Datenquelle die Messeinheiten nicht an. Die Daten sind wie folgt:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-condensed table-sm">
@@ -581,7 +585,7 @@ div.csl-indent {
 <h2 data-number="A.5" class="anchored" data-anchor-id="exploration-von-numerischen-daten"><span class="header-section-number">A.5</span> Exploration von numerischen Daten</h2>
 <section id="umweltdaten-entlang-der-dänischen-küste" class="level3" data-number="A.5.1">
 <h3 data-number="A.5.1" class="anchored" data-anchor-id="umweltdaten-entlang-der-dänischen-küste"><span class="header-section-number">A.5.1</span> Umweltdaten entlang der dänischen Küste</h3>
-<p>Die Datei “Temperatur.csv” aus <span class="citation" data-cites="Zuur2009a">Zuur, Ieno, and Meesters (<a href="references.html#ref-Zuur2009a" role="doc-biblioref">2009</a>)</span> enthält Messungen von Temperatur, Salinität und Chlorophyll a an 31 Orten entlang der dänischen Küste. Der Datensatz kann <a href="https://highstat.com/index.php/a-beginner-s-guide-to-r">hier</a> heruntergeladen werden. Sie bekommen ihn aber bereits über ILIAS gestellt. Die Daten stammen vom dänischen Institut RIKZ (Monitoringprogramm MWTL: Monitoring Waterstaatkundige Toestand des Lands). Die Messungen wurden zwischen 1990 und 2005 durchgeführt, mit einer Häufigkeit von 0–4 mal pro Monat je nach Jahreszeit.</p>
+<p>Die Datei “Temperatur.csv” aus <span class="citation" data-cites="Zuur2009a">(<a href="references.html#ref-Zuur2009a" role="doc-biblioref"><strong>Zuur2009a?</strong></a>)</span> enthält Messungen von Temperatur, Salinität und Chlorophyll a an 31 Orten entlang der dänischen Küste. Der Datensatz kann <a href="https://highstat.com/index.php/a-beginner-s-guide-to-r">hier</a> heruntergeladen werden. Sie bekommen ihn aber bereits über ILIAS gestellt. Die Daten stammen vom dänischen Institut RIKZ (Monitoringprogramm MWTL: Monitoring Waterstaatkundige Toestand des Lands). Die Messungen wurden zwischen 1990 und 2005 durchgeführt, mit einer Häufigkeit von 0–4 mal pro Monat je nach Jahreszeit.</p>
 <ol type="1">
 <li>Lesen Sie den Datensatz “Temperatur.csv” (auf ILIAS) ein.</li>
 <li>Konvertieren Sie die Spalte Date in ein richtiges Datumsformat und plotten Sie die Temperaturen pro Station (<code>facet_wrap()</code>) als Zeitreihen.</li>
@@ -665,11 +669,68 @@ div.csl-indent {
 <ol type="1">
 <li>Überprüfen Sie, ob sich die Lagerungsdichte auf den bearbeiteten Feldern erhöht hat.</li>
 </ol>
+</section>
+</section>
+<section id="maschinelles-lernen" class="level2" data-number="A.12">
+<h2 data-number="A.12" class="anchored" data-anchor-id="maschinelles-lernen"><span class="header-section-number">A.12</span> Maschinelles Lernen</h2>
+<section id="klassifikation-mit-knn" class="level3" data-number="A.12.1">
+<h3 data-number="A.12.1" class="anchored" data-anchor-id="klassifikation-mit-knn"><span class="header-section-number">A.12.1</span> Klassifikation mit KNN</h3>
+<p>Es soll die Gefahr der Einwanderung einer invasiven Art untersucht werden. Dazu wurde der Abstand von bereits besiedelten Parzellen (in km) und die minimale volumetrische Bodenfeuchte (%) aufgenommen. Dazu liegen auch bereits Daten vor, die unten dargestellt sind.</p>
+<ol type="1">
+<li><p>Lesen Sie die Daten aus der Datei KNN.csv ein und stellen Sie diese als Streudiagramm dar.</p></li>
+<li><p>Klassifizieren Sie die Daten mit <span class="math inline">\(K = 3\)</span>. Da die Funktion <code>knn()</code> einen Trainings- und Datensatz erwartet, müssen Sie die Daten erst unterteilen. Nutzen Sie diesen Code und erklären Sie ihn:</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(class)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> knn_data</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(x), <span class="fu">nrow</span>(x)<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>x.train <span class="ot">&lt;-</span> x[train, <span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>y.train <span class="ot">&lt;-</span> <span class="fu">unlist</span>(x[train, <span class="dv">1</span>])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>x.test <span class="ot">&lt;-</span> x[<span class="sc">-</span>train, <span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>y.test <span class="ot">&lt;-</span> <span class="fu">unlist</span>(x[<span class="sc">-</span>train, <span class="dv">1</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Klassifizieren Sie nun die Daten und berechnen Sie die Klassifikationsfehlerrate. Erklären Sie den Code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knn.pred <span class="ot">&lt;-</span> <span class="fu">knn</span>(x.train, x.test,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">cl =</span> y.train, <span class="at">k =</span> <span class="dv">3</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(knn.pred)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Factor w/ 2 levels "besiedelt","unbesiedelt": 2 2 1 2 2 1 2 1 2 2 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(knn.pred <span class="sc">==</span> y.test)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.94</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Bestimmen Sie das optimale <span class="math inline">\(K\)</span> für die KNN Klassifikation mit der Methode des Test- und Trainingsdatensatzes. Erklären Sie den Code.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>knn_pred_list <span class="ot">&lt;-</span> <span class="fu">sapply</span>(k, <span class="cf">function</span>(x) <span class="fu">knn</span>(x.train, x.test,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">cl =</span> y.train, <span class="at">k =</span> x))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>k_error <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">k =</span> k, <span class="at">error =</span> <span class="fu">apply</span>(knn_pred_list, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">mean</span>(x <span class="sc">!=</span> y.test)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li><p>Plotten Sie die Klassifikationsfehlerrate.</p></li>
+<li><p>Variieren Sie den Seed und untersuchen Sie, wie sich die Klassifikationsfehlerrate dadurch verändert.</p></li>
+<li><p>Bestimmen Sie jetzt das optimale <span class="math inline">\(K\)</span> durch die Kreuzvalidierung. Erklären Sie den Code.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>find.k <span class="ot">&lt;-</span> <span class="fu">sapply</span>(k, <span class="cf">function</span>(x) <span class="fu">knn.cv</span>(x.train, y.train, <span class="at">k =</span> x))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cv.error <span class="ot">&lt;-</span> <span class="fu">apply</span>(find.k, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">mean</span>(x <span class="sc">!=</span> y.train))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plotten Sie den Fehler der Kreuzvalidierung und vergleichen Sie mit dem Fehler aus der Methode des Test- und Trainingsdatensatzes.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-Zuur2009a" class="csl-entry" role="doc-biblioentry">
-Zuur, A. F., E. Ieno, and E. Meesters. 2009. <em>A Beginner’s Guide to <span>R</span></em>. <span>Springer</span>.
+<div id="ref-Zuur2009" class="csl-entry" role="doc-biblioentry">
+Zuur, A. F., E. Ieno, and E. Meesters. 2009. <em>A Beginner’s Guide to r</em>. Springer. <a href="http://link.springer.com/book/10.1007%2F978-0-387-93837-0">http://link.springer.com/book/10.1007%2F978-0-387-93837-0</a>.
 </div>
 </div>
 </section>

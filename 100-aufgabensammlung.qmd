@@ -270,3 +270,63 @@ Lösen Sie die Aufgabe mit `infer`.
 Schwere landwirtschaftliche Maschinen können beim Bearbeiten des Bodens zu Bodenverdichtung führen. In einem randomisierten Design wurden zufällig Parzellen auf einem sonst homogenen Feld mit einer schweren Maschine bearbeitet (`compacted`). Auf allen Parzellen wurde danach die Lagerungsdichte bestimmt. Aus langjährigen Messungen ist ist der Mittelwert des unverdichteten Bodens bekannt und beträgt 1.3 [g/cm³]. Die Lagerungsdichte (auch Trockenrohdichte) ist ein Maß für Bodenstruktur und gibt das Verhältnis der Trockenmasse eines Bodens zu seinem Volumen. Sie wird häufig in [g/cm³] gemessen und kann als ein Indikator für Bodenverdichtung genutzt werden. Eine Erhöhung der Lagerungsdichte ist ein Indikator für Verdichtung. Der Datensatz ist in der Datei "bd_compaction_simple.csv" gespeichert.
 
 1. Überprüfen Sie, ob sich die Lagerungsdichte auf den bearbeiteten Feldern erhöht hat. 
+
+## Maschinelles Lernen
+### Klassifikation mit KNN
+
+Es soll die Gefahr der Einwanderung einer invasiven Art untersucht werden. Dazu wurde der Abstand von bereits besiedelten Parzellen (in km) und die minimale volumetrische Bodenfeuchte (%) aufgenommen. Dazu liegen auch bereits Daten vor, die unten dargestellt sind.
+```{r}
+#| include: false
+knn_data <- read_delim('Daten/KNN.csv', delim = ';')
+```
+
+
+1. Lesen Sie die Daten aus der Datei KNN.csv ein und stellen Sie diese als Streudiagramm dar.
+
+2. Klassifizieren Sie die Daten mit $K = 3$. Da die Funktion `knn()` einen Trainings- und Datensatz erwartet, müssen Sie die Daten erst unterteilen. Nutzen Sie diesen Code und erklären Sie ihn:
+```{r}
+library(class)
+x <- knn_data
+
+set.seed(1)
+train <- sample(1:nrow(x), nrow(x)/2)
+x.train <- x[train, -1]
+y.train <- unlist(x[train, 1])
+
+x.test <- x[-train, -1]
+y.test <- unlist(x[-train, 1])
+```
+
+Klassifizieren Sie nun die Daten und berechnen Sie die Klassifikationsfehlerrate. Erklären Sie den Code.
+
+```{r}
+knn.pred <- knn(x.train, x.test,
+               cl = y.train, k = 3)
+str(knn.pred)
+mean(knn.pred == y.test)
+```
+
+2. Bestimmen Sie das optimale $K$ für die KNN Klassifikation mit der Methode des Test- und Trainingsdatensatzes. Erklären Sie den Code.
+```{r}
+k <- 1:50
+knn_pred_list <- sapply(k, function(x) knn(x.train, x.test,
+               cl = y.train, k = x))
+
+k_error <- tibble(k = k, error = apply(knn_pred_list, 2, function(x) mean(x != y.test)))
+```
+
+3. Plotten Sie die Klassifikationsfehlerrate.
+4. Variieren Sie den Seed und untersuchen Sie, wie sich die Klassifikationsfehlerrate dadurch verändert.
+
+5. Bestimmen Sie jetzt das optimale $K$ durch die Kreuzvalidierung. Erklären Sie den Code.
+```{r}
+k <- 1:50
+find.k <- sapply(k, function(x) knn.cv(x.train, y.train, k = x))
+cv.error <- apply(find.k, 2, function(x) mean(x != y.train))
+```
+
+Plotten Sie den Fehler der Kreuzvalidierung und vergleichen Sie mit dem Fehler aus der Methode des Test- und Trainingsdatensatzes.
+
+
+
+

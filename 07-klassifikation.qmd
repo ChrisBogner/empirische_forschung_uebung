@@ -1,0 +1,30 @@
+# $K$ nächste Nachbarn (KNN) Klassifkation {#knn}
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+source("helper_functions.R")
+library(rmarkdown)
+```
+
+
+:::{.outcomes}
+- KNN Klassifikation anwenden
+- Optimales $K$ mittels der Methode des Trainings- und Testdatensatzes bestimmen
+- Optimales $K$ mittels Kreuzvalidierung bestimmen
+:::
+
+
+```{r}
+
+```
+
+
+## Lesestoff
+
+
+## Weiterführende Literatur und Videos
+
+
