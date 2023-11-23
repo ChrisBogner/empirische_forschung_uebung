@@ -306,7 +306,7 @@ str(knn.pred)
 mean(knn.pred == y.test)
 ```
 
-2. Bestimmen Sie das optimale $K$ für die KNN Klassifikation mit der Methode des Test- und Trainingsdatensatzes. Erklären Sie den Code.
+3. Bestimmen Sie das optimale $K$ für die KNN Klassifikation mit der Methode des Test- und Trainingsdatensatzes. Erklären Sie den Code.
 ```{r}
 k <- 1:50
 knn_pred_list <- sapply(k, function(x) knn(x.train, x.test,
@@ -315,10 +315,10 @@ knn_pred_list <- sapply(k, function(x) knn(x.train, x.test,
 k_error <- tibble(k = k, error = apply(knn_pred_list, 2, function(x) mean(x != y.test)))
 ```
 
-3. Plotten Sie die Klassifikationsfehlerrate.
-4. Variieren Sie den Seed und untersuchen Sie, wie sich die Klassifikationsfehlerrate dadurch verändert.
+4. Plotten Sie die Klassifikationsfehlerrate.
+5. Variieren Sie den Seed und untersuchen Sie, wie sich die Klassifikationsfehlerrate dadurch verändert.
 
-5. Bestimmen Sie jetzt das optimale $K$ durch die Kreuzvalidierung. Erklären Sie den Code.
+6. Bestimmen Sie jetzt das optimale $K$ durch die Kreuzvalidierung. Erklären Sie den Code.
 ```{r}
 k <- 1:50
 find.k <- sapply(k, function(x) knn.cv(x.train, y.train, k = x))
@@ -329,4 +329,56 @@ Plotten Sie den Fehler der Kreuzvalidierung und vergleichen Sie mit dem Fehler a
 
 
 
+### Regression mit Random Forest
+Wir beschäftigen uns mit dem Datensatz Boston aus der Bibliothek ISLR2.
 
+1. Laden Sie die Bibliothek und den Datensatz.
+2. Lesen Sie in der Hilfe nach, welche Daten der Datensatz enthält.
+3. Führen Sie eine kurze explorative Analyse des Datensatzes durch. Die Zielvariable ist `medv`. Probieren Sie die Funktion `ggpairs()` aus dem Paket GGally aus.
+
+4. Wir wollen mithilfe des Random Forest den Median des Wertes eines Hauses vorhersagen.
+
+Zunächst teilen wir die Daten in Trainings- und Testdatensatz, damit wir am Ende einen echten Testfehler berechnen können.
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+library(ISLR2)
+data(Boston)
+```
+
+
+```{r}
+set.seed(1)
+train <- sample(1:nrow(Boston), nrow(Boston)/2)
+boston.test <- Boston[-train, "medv"]
+```
+
+Jetzt passen wir den Random Forest an. Erklären Sie den Code. Was wird hier ab Ende berechnet?
+
+```{r}
+#| warning: false
+#| message: false
+#| eval: false
+library(randomForest)
+
+set.seed(1)
+
+rf.boston <- randomForest(medv~., data = Boston,
+                         subset = train,
+                         mtry = floor(sqrt(dim(Boston)[2])),
+                         importance = TRUE)
+
+yhat.rf <- predict(rf.boston, newdata = Boston[-train,])
+
+mean((yhat.rf-boston.test)^2)
+```
+5. Stellen Sie die vorhergesagten gegen die beobachteten Mediane der Hauswerte dar.
+
+6. Erklären Sie den nachfolgenden Code. Was wird hier dargestellt? Wie interpretieren Sie das?
+```{r}
+#| eval: false
+importance(rf.boston, scale = F, type = 1)
+
+varImpPlot(rf.boston, scale = F, type = 1)
+```

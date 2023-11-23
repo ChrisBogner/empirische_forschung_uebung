@@ -351,6 +351,7 @@ div.csl-indent {
   <li><a href="#maschinelles-lernen" id="toc-maschinelles-lernen" class="nav-link" data-scroll-target="#maschinelles-lernen"><span class="toc-section-number">A.12</span>  Maschinelles Lernen</a>
   <ul class="collapse">
   <li><a href="#klassifikation-mit-knn" id="toc-klassifikation-mit-knn" class="nav-link" data-scroll-target="#klassifikation-mit-knn"><span class="toc-section-number">A.12.1</span>  Klassifikation mit KNN</a></li>
+  <li><a href="#regression-mit-random-forest" id="toc-regression-mit-random-forest" class="nav-link" data-scroll-target="#regression-mit-random-forest"><span class="toc-section-number">A.12.2</span>  Regression mit Random Forest</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -705,7 +706,7 @@ div.csl-indent {
 <pre><code>[1] 0.94</code></pre>
 </div>
 </div>
-<ol start="2" type="1">
+<ol start="3" type="1">
 <li>Bestimmen Sie das optimale <span class="math inline">\(K\)</span> für die KNN Klassifikation mit der Methode des Test- und Trainingsdatensatzes. Erklären Sie den Code.</li>
 </ol>
 <div class="cell">
@@ -715,7 +716,7 @@ div.csl-indent {
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>k_error <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">k =</span> k, <span class="at">error =</span> <span class="fu">apply</span>(knn_pred_list, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">mean</span>(x <span class="sc">!=</span> y.test)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="3" type="1">
+<ol start="4" type="1">
 <li><p>Plotten Sie die Klassifikationsfehlerrate.</p></li>
 <li><p>Variieren Sie den Seed und untersuchen Sie, wie sich die Klassifikationsfehlerrate dadurch verändert.</p></li>
 <li><p>Bestimmen Sie jetzt das optimale <span class="math inline">\(K\)</span> durch die Kreuzvalidierung. Erklären Sie den Code.</p></li>
@@ -726,6 +727,40 @@ div.csl-indent {
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cv.error <span class="ot">&lt;-</span> <span class="fu">apply</span>(find.k, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="fu">mean</span>(x <span class="sc">!=</span> y.train))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Plotten Sie den Fehler der Kreuzvalidierung und vergleichen Sie mit dem Fehler aus der Methode des Test- und Trainingsdatensatzes.</p>
+</section>
+<section id="regression-mit-random-forest" class="level3" data-number="A.12.2">
+<h3 data-number="A.12.2" class="anchored" data-anchor-id="regression-mit-random-forest"><span class="header-section-number">A.12.2</span> Regression mit Random Forest</h3>
+<p>Wir eschäftigen uns mit dem Datensatz Boston aus der Bibliothek ISLR2.</p>
+<ol type="1">
+<li><p>Laden Sie die Bibliothek und den Datensatz.</p></li>
+<li><p>Lesen Sie in der Hilfe nach, welche Daten der Datensatz enthält.</p></li>
+<li><p>Führen Sie eine kurze explorative Analyse des Datensatzes durch. Die Zielvariable ist <code>medv</code>. Probieren Sie die Funktion <code>ggpairs()</code> aus dem Paket GGally aus.</p></li>
+<li><p>Wir wollen mithilfe des Random Forest den Median des Wertes eines Hauses vorhersagen.</p></li>
+</ol>
+<p>Zunächast teilen wir die Daten in Trainings- und Testdatensatz, damit wir am Ende einen echten Testfehler berechnen können.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(Boston), <span class="fu">nrow</span>(Boston)<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>boston.test <span class="ot">=</span> Boston[<span class="sc">-</span>train, <span class="st">"medv"</span>]</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Jetzt passen wir den Random Forest an. Erklären Sie den Code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomForest)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>rf.boston <span class="ot">=</span> <span class="fu">randomForest</span>(medv<span class="sc">~</span>., <span class="at">data=</span>Boston,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">subset=</span>train,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">mtry=</span><span class="dv">6</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">importance=</span><span class="cn">TRUE</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>yhat.rf <span class="ot">=</span> <span class="fu">predict</span>(rf.boston, <span class="at">newdata =</span> Boston[<span class="sc">-</span>train,])</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>((yhat.rf<span class="sc">-</span>boston.test)<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20.06644</code></pre>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
