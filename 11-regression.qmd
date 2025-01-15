@@ -95,6 +95,7 @@ library(tidyverse)
 library(infer)
 library(moderndive)
 library(knitr)
+library(DT)
 ```
 
 Wir generieren unsere **Grundgesamtheit**. Das sind alle 12000 Studierende von der Uni Werdeschlau. Wir erstellen uns in diesem Beispiel unsere Grundgesamtheit aus der Gleichverteilung. Die Regeln dazu sind absolut frei erfunden. Die meisten Studierenden sind zwischen 5 und 40 Minuten unterwegs; 20% jedoch haben eine längere Anreise zwischen 60 und 120 Minuten.
