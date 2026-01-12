@@ -249,7 +249,7 @@ ggplot(monthly_means, aes(x = year_month, y = mean_T, ymin = mean_T - sd_T, ymax
   geom_errorbar() +
   geom_point() +
   facet_wrap(~STATIONS_ID, nrow = 3) + 
-  labs(x = 'Zeti', y = 'Temperatur (°C)')
+  labs(x = 'Zeit', y = 'Temperatur (°C)')
 ```
 
 Oder, weil es gerade Spaß macht, als halb-transparentes Band. Ich hoffe, Sie haben jetzt Lust, das Kapitel 5 im ggplot2 Buch zu lesen `r emo::ji('sunglasses')`.
