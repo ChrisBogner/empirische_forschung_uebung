@@ -278,6 +278,10 @@ ggplot(monthly_means, aes(x = year_month, y = mean_T, ymin = mean_T - sd_T, ymax
 ## Lesestoff
 Kapitel 3 in @ModernDive
 
+## Hausaufgaben
+- Aufgaben A3 - A5.1 (Exploration von kategorialen und numerischen Daten)
+- Sie erhalten Feedback zu den Aufgaben über FelloFish (KI-Feedback-Tool). Die entsprechenden Links finden Sie bei den Aufgaben
+
 ## Weiterführende Literatur und Videos
 
 - R4DS @r4ds: Kapitel 4 "Data transformation"
